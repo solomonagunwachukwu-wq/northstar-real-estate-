@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Northstar Properties — Curated luxury residences, architectural estates, and premier real estate advisory. Portfolio demonstration project by Solomon Agunwachukwu." />
+  <title>Northstar Properties | Curated Luxury Real Estate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Portfolio Demo Banner -->
+  <div class="demo-banner" role="region" aria-label="Portfolio demonstration notice">
+    <p>Portfolio Demonstration Project &bull; Crafted by <strong>Solomon Agunwachukwu</strong> &bull; Sample Listings &amp; Illustrative Brand</p>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo" aria-label="Northstar Properties Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2L17.2 10.8L26 14L17.2 17.2L14 26L10.8 17.2L2 14L10.8 10.8L14 2Z" stroke="currentColor" stroke-width="1.6" fill="none"/>
+            <circle cx="14" cy="14" r="2.2" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="logo-text">NORTHSTAR <span class="logo-sub">PROPERTIES</span></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Primary Navigation">
+        <a href="#properties" class="nav-link">Properties</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button type="button" class="saved-btn" id="open-saved-modal" aria-label="View saved properties">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span>Saved</span>
+          <span class="saved-count" id="saved-count">0</span>
+        </button>
+      </nav>
+
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-media">
+        <img
+          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=85"
+          alt="Modern architectural residence surrounded by lush greenery at dusk"
+          class="hero-img"
+        />
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="container hero-content">
+        <span class="eyebrow fade-in">Architectural Estates &amp; Private Residences</span>
+        <h1 class="hero-title fade-in">Where Timeless Architecture Meets Enduring Value.</h1>
+        <p class="hero-subtitle fade-in">
+          Discover thoughtfully curated villas, contemporary penthouses, and serene waterfront retreats selected for discerning homeowners and investors.
+        </p>
+        <div class="hero-actions fade-in">
+          <a href="#properties" class="btn btn-gold">Explore Portfolio</a>
+          <a href="#contact" class="btn btn-outline-light">Schedule a Private Viewing</a>
+        </div>
+      </div>
+
+      <!-- Property Search Interface -->
+      <div class="container search-wrapper">
+        <form class="search-bar" id="property-search-form" aria-label="Property search and filter">
+          <div class="search-field">
+            <label for="filter-location">Location</label>
+            <select id="filter-location" name="location">
+              <option value="all">All Locations</option>
+              <option value="Ikoyi, Lagos">Ikoyi, Lagos</option>
+              <option value="Victoria Island, Lagos">Victoria Island, Lagos</option>
+              <option value="Maitama, Abuja">Maitama, Abuja</option>
+              <option value="Lekki Phase 1, Lagos">Lekki Phase 1, Lagos</option>
+              <option value="Asokoro, Abuja">Asokoro, Abuja</option>
+            </select>
+          </div>
+
+          <div class="search-divider" aria-hidden="true"></div>
+
+          <div class="search-field">
+            <label for="filter-type">Property Type</label>
+            <select id="filter-type" name="type">
+              <option value="all">All Property Types</option>
+              <option value="Villa">Luxury Villa</option>
+              <option value="Penthouse">Penthouse</option>
+              <option value="Duplex">Detached Duplex</option>
+              <option value="Waterfront">Waterfront Residence</option>
+            </select>
+          </div>
+
+          <div class="search-divider" aria-hidden="true"></div>
+
+          <div class="search-field">
+            <label for="filter-budget">Maximum Budget</label>
+            <select id="filter-budget" name="budget">
+              <option value="all">Any Budget</option>
+              <option value="250000">Up to $250,000</option>
+              <option value="500000">Up to $500,000</option>
+              <option value="850000">Up to $850,000</option>
+              <option value="1500000">Up to $1,500,000</option>
+            </select>
+          </div>
+
+          <div class="search-submit">
+            <button type="submit" class="btn btn-primary btn-search">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <span>Search Properties</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Featured Property Listings -->
+    <section class="section properties-section" id="properties">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-tag">Curated Collection</span>
+            <h2 class="section-title">Featured Residences</h2>
+          </div>
+
+          <div class="category-tabs" role="tablist" aria-label="Filter properties by listing category">
+            <button type="button" class="tab-btn active" data-category="all" role="tab" aria-selected="true">All Listings</button>
+            <button type="button" class="tab-btn" data-category="Buy" role="tab" aria-selected="false">For Sale</button>
+            <button type="button" class="tab-btn" data-category="Rent" role="tab" aria-selected="false">For Lease</button>
+          </div>
+        </div>
+
+        <div class="results-meta">
+          <p id="results-count" aria-live="polite">Showing 6 curated properties</p>
+          <button type="button" class="reset-filters-btn" id="reset-filters" hidden>Reset All Filters</button>
+        </div>
+
+        <div class="property-grid" id="property-grid">
+          <!-- Populated dynamically via script.js for interactive filtering & saving -->
+        </div>
+
+        <div class="empty-state" id="empty-state" hidden>
+          <h3>No matching properties found</h3>
+          <p>Try broadening your budget range, switching listing categories, or selecting all locations.</p>
+          <button type="button" class="btn btn-primary" id="empty-reset-btn">Show All Properties</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About the Company -->
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-visual reveal">
+          <div class="about-image-frame">
+            <img
+              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80"
+              alt="Sunlit luxury living room with floor-to-ceiling windows and natural stone finishes"
+              loading="lazy"
+            />
+          </div>
+          <div class="about-badge">
+            <span class="badge-number">14+</span>
+            <span class="badge-label">Years of Architectural Advisory Excellence</span>
+          </div>
+        </div>
+
+        <div class="about-content reveal">
+          <span class="section-tag">About Northstar Properties</span>
+          <h2 class="section-title">Grounded in Integrity, Guided by Design.</h2>
+          <p class="lead-text">
+            Northstar Properties was conceived with a singular philosophy: residential real estate should unite architectural distinction with transparent, data-informed advisory.
+          </p>
+          <p class="body-text">
+            From private waterfront villas to serene urban penthouses, every property in our portfolio undergoes rigorous due diligence—evaluating structural quality, neighborhood trajectory, and long-term livability before representation.
+          </p>
+
+          <div class="stats-row">
+            <div class="stat-item">
+              <span class="stat-value">$420M+</span>
+              <span class="stat-desc">Sample Portfolio Valuation</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">98%</span>
+              <span class="stat-desc">Client Advisory Satisfaction</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">24h</span>
+              <span class="stat-desc">Private Consultation Turnaround</span>
+            </div>
+          </div>
+
+          <a href="#services" class="btn btn-primary">Discover Our Advisory Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section: Buying, Selling & Renting -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-header centered">
+          <span class="section-tag">Bespoke Real Estate Solutions</span>
+          <h2 class="section-title">Tailored Advisory at Every Stage</h2>
+          <p class="section-subtitle">
+            Whether acquiring a primary residence, divesting an architectural asset, or securing an executive lease, our specialists manage every detail with discretion.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </div>
+            <h3>Buying</h3>
+            <p>
+              Gain privileged access to vetted off-market estates and newly completed residences. We handle neighborhood analysis, valuation benchmarking, legal title verification, and negotiation.
+            </p>
+            <a href="#contact" class="service-link" data-service="Buying">Request Buyer Representation &rarr;</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <h3>Selling</h3>
+            <p>
+              Position your property before qualified domestic and international buyers through architectural photography, editorial storytelling, private previews, and strategic pricing.
+            </p>
+            <a href="#contact" class="service-link" data-service="Selling">Schedule a Property Valuation &rarr;</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <h3>Renting</h3>
+            <p>
+              Seamless executive leasing and turnkey residence placement. We match discerning tenants with fully serviced apartments and private homes backed by responsive property care.
+            </p>
+            <a href="#contact" class="service-link" data-service="Renting">Explore Leasing Concierge &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-header centered">
+          <span class="section-tag">Illustrative Client Experiences</span>
+          <h2 class="section-title">Words from Our Residents &amp; Partners</h2>
+          <p class="sample-disclaimer">
+            Note: The testimonials below are illustrative sample entries created to demonstrate layout and typography for this portfolio showcase.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <blockquote class="testimonial-card reveal">
+            <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+            <p class="testimonial-text">
+              Northstar Properties streamlined our relocation to Ikoyi with remarkable composure. Every home we toured matched our architectural brief, and their due diligence gave us complete peace of mind.
+            </p>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">AO</div>
+              <div>
+                <cite class="author-name">Adebayo &amp; Chidinma Okafor</cite>
+                <span class="author-meta">Sample Testimonial &bull; Villa Acquisition, Ikoyi</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card reveal">
+            <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+            <p class="testimonial-text">
+              Their presentation of our Maitama residence was editorial-grade. Within three weeks of private viewings, Northstar secured a qualified buyer at our target valuation without unnecessary friction.
+            </p>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">HI</div>
+              <div>
+                <cite class="author-name">Hauwa Ibrahim</cite>
+                <span class="author-meta">Sample Testimonial &bull; Property Seller, Abuja</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card reveal">
+            <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+            <p class="testimonial-text">
+              As an expatriate executive, finding a serene, well-managed waterfront lease felt daunting until I partnered with Northstar. Their concierge team handled every contract detail transparently.
+            </p>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">DM</div>
+              <div>
+                <cite class="author-name">David Mensah</cite>
+                <span class="author-meta">Sample Testimonial &bull; Executive Lease, Victoria Island</span>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Enquiry Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <span class="section-tag">Private Concierge</span>
+          <h2 class="section-title">Begin a Conversation with Our Advisors</h2>
+          <p class="body-text">
+            Interested in scheduling a private tour, requesting a property dossier, or discussing representation? Complete the enquiry form and an advisor will respond promptly.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <span class="detail-label">Advisory Office</span>
+              <span class="detail-value">14 Bourdillon Way, Ikoyi, Lagos &bull; Nigeria</span>
+            </div>
+            <div class="contact-detail-item">
+              <span class="detail-label">Direct Desk</span>
+              <span class="detail-value">concierge@northstar-demo.example</span>
+            </div>
+            <div class="contact-detail-item">
+              <span class="detail-label">Consultation Hours</span>
+              <span class="detail-value">Monday &ndash; Saturday, 9:00 AM &ndash; 6:00 PM WAT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-card reveal">
+          <form id="enquiry-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="full-name">Full Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="full-name" name="fullName" placeholder="e.g. Amara Nwosu" required />
+                <span class="error-msg" id="error-full-name" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email-address">Email Address <span aria-hidden="true">*</span></label>
+                <input type="email" id="email-address" name="email" placeholder="e.g. amara@example.com" required />
+                <span class="error-msg" id="error-email" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="interest-type">Area of Interest</label>
+                <select id="interest-type" name="interest">
+                  <option value="Buying">Buying a Residence</option>
+                  <option value="Selling">Selling a Property</option>
+                  <option value="Renting">Executive Leasing / Renting</option>
+                  <option value="General">General Advisory Enquiry</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="preferred-location">Preferred Location</label>
+                <select id="preferred-location" name="preferredLocation">
+                  <option value="Ikoyi, Lagos">Ikoyi, Lagos</option>
+                  <option value="Victoria Island, Lagos">Victoria Island, Lagos</option>
+                  <option value="Maitama, Abuja">Maitama, Abuja</option>
+                  <option value="Lekki Phase 1, Lagos">Lekki Phase 1, Lagos</option>
+                  <option value="Asokoro, Abuja">Asokoro, Abuja</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message &amp; Requirements <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your preferred timeline, architectural style, or specific listing..." required></textarea>
+              <span class="error-msg" id="error-message" aria-live="polite"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Submit Private Enquiry</button>
+
+            <div class="form-feedback" id="form-feedback" role="status" aria-live="polite" hidden></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Professional Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="brand-logo footer-logo">
+          <span class="logo-text">NORTHSTAR <span class="logo-sub">PROPERTIES</span></span>
+        </a>
+        <p class="footer-desc">
+          Curated luxury real estate showcase built as a front-end architecture demonstration by Solomon Agunwachukwu.
+        </p>
+      </div>
+
+      <div class="footer-links-group">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#properties">Featured Listings</a></li>
+          <li><a href="#about">About Northstar</a></li>
+          <li><a href="#services">Advisory Services</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-group">
+        <h4>Portfolio Creator</h4>
+        <ul>
+          <li><a href="https://github.com/solomon977" target="_blank" rel="noopener noreferrer">GitHub (@solomon977)</a></li>
+          <li><a href="mailto:solomonagunwachukwu@gmail.com">solomonagunwachukwu@gmail.com</a></li>
+          <li><a href="#contact">Schedule a Demo Enquiry</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; <span id="current-year">2026</span> Northstar Properties Showcase. Designed &amp; built by Solomon Agunwachukwu.</p>
+      <p class="footer-note">Demonstration Project &bull; All property prices and listings are illustrative.</p>
+    </div>
+  </footer>
+
+  <!-- Property Details Modal -->
+  <div class="modal-backdrop" id="property-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-panel">
+      <button type="button" class="modal-close" id="close-property-modal" aria-label="Close property details">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Saved Properties Drawer/Modal -->
+  <div class="modal-backdrop" id="saved-modal" role="dialog" aria-modal="true" aria-labelledby="saved-modal-title" hidden>
+    <div class="modal-panel saved-panel">
+      <div class="saved-header">
+        <h3 id="saved-modal-title">Saved Shortlist</h3>
+        <button type="button" class="modal-close" id="close-saved-modal" aria-label="Close saved properties">&times;</button>
+      </div>
+      <div id="saved-list-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
